@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrigoreDetection", "GrigoreDetection\GrigoreDetection.csproj", "{50D5E96D-6ED2-417A-ADD9-6FFC3222A818}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{D652E3BD-1DFA-450E-93F2-60E66558E6C2}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Controls.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Controls.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Controls.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Controls.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.DebuggerVisualizers (2010).dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.DebuggerVisualizers (2010).dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Fuzzy.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Fuzzy.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Fuzzy.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Fuzzy.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Genetic.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Genetic.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Genetic.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Genetic.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.Formats.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.Formats.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.Formats.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.Formats.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.IPPrototyper.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.IPPrototyper.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Imaging.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.MachineLearning.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.MachineLearning.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.MachineLearning.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.MachineLearning.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Math.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Math.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Math.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Math.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Neuro.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Neuro.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Neuro.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Neuro.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Lego.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Lego.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Lego.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Lego.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Surveyor.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Surveyor.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Surveyor.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.Surveyor.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.TeRK.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.TeRK.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.TeRK.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Robotics.TeRK.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.DirectShow.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.DirectShow.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.DirectShow.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.DirectShow.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.FFMPEG.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.FFMPEG.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.FFMPEG.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.FFMPEG.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Kinect.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Kinect.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Kinect.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Kinect.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.VFW.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.VFW.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.VFW.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.VFW.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Ximea.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Ximea.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Ximea.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.Ximea.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Video.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Vision.dll = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Vision.dll
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Vision.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.Vision.xml
+		..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.xml = ..\..\..\..\Downloads\AForge.NET Framework-2.2.5\Release\AForge.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50D5E96D-6ED2-417A-ADD9-6FFC3222A818}.Debug|x86.ActiveCfg = Debug|x86
+		{50D5E96D-6ED2-417A-ADD9-6FFC3222A818}.Debug|x86.Build.0 = Debug|x86
+		{50D5E96D-6ED2-417A-ADD9-6FFC3222A818}.Release|x86.ActiveCfg = Release|x86
+		{50D5E96D-6ED2-417A-ADD9-6FFC3222A818}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
