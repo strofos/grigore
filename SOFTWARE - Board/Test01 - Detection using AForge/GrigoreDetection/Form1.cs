@@ -17,25 +17,84 @@ namespace GrigoreDetection
    
     public partial class Form1 : Form
     {
-        public string DirPath;
+       
         public string OriginalBoardImage = "robo-board1.png";
-        public string TemplateBoardImage = "robo-board1.{0}.png";
+        public IList<string> DifBoardImages = new List<string> { "robo-board1.1.png", "robo-board1.2.png", "robo-board1.3.png" };
         
         public Form1()
         {
             InitializeComponent();
 
-            DirPath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName
+            string dirPath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName
                 + "\\Images\\";
 
+            openImageDialog.InitialDirectory = Environment.CurrentDirectory;
+
+            OriginalBoardImage = dirPath + OriginalBoardImage;
+
+            for (int idx = 0; idx < DifBoardImages.Count; idx++)
+                DifBoardImages[idx] = dirPath + DifBoardImages[idx];
+
+            UpdateUI();
         }
 
-        private void ParseImage(int imageId) {
+        private void UpdateUI() {
+            labelBasePath.Text = OriginalBoardImage;
 
-            string difImagePath = string.Format(TemplateBoardImage, imageId);
+            if (OriginalBoardImage.Length > 30)
+                labelBasePath.Text = "..." + OriginalBoardImage.Substring(OriginalBoardImage.Length - 30);
+            else
+                labelBasePath.Text = OriginalBoardImage;
 
-            Bitmap orig = (Bitmap)Bitmap.FromFile(DirPath + OriginalBoardImage);
-            Bitmap dif = (Bitmap)Bitmap.FromFile(DirPath + difImagePath);
+            if (DifBoardImages[0].Length > 35)
+                labelImagePath1.Text = "..." + DifBoardImages[0].Substring(DifBoardImages[0].Length - 35);
+            else
+                labelImagePath1.Text = DifBoardImages[0];
+
+            if (DifBoardImages[1].Length > 35)
+                labelImagePath2.Text = "..." + DifBoardImages[1].Substring(DifBoardImages[1].Length - 35);
+            else
+                labelImagePath2.Text = DifBoardImages[1];
+
+            if (DifBoardImages[2].Length > 35)
+                labelImagePath3.Text = "..." + DifBoardImages[2].Substring(DifBoardImages[2].Length - 35);
+            else
+                labelImagePath3.Text = DifBoardImages[2];
+        }
+
+        private void BrowseImage(int imageId) {
+            openImageDialog.ShowDialog();
+
+            if (string.IsNullOrEmpty(openImageDialog.FileName))
+                return;
+
+            if (imageId == -1)
+                OriginalBoardImage = openImageDialog.FileName;
+            else
+                DifBoardImages[imageId] = openImageDialog.FileName;
+
+            UpdateUI();
+
+            if (imageId >= 0)
+                ParseImage(imageId);
+        }
+
+        private void ParseImage(int imageId)
+        {
+            string difImagePath = DifBoardImages[imageId];
+
+            Bitmap orig;
+            Bitmap dif;
+
+            try
+            {
+                orig = (Bitmap)Bitmap.FromFile(OriginalBoardImage);
+                dif = (Bitmap)Bitmap.FromFile(difImagePath);
+            }
+            catch {
+                // kill any exception due to missing files
+                return;
+            }
 
             pictureBoxOrig.Image = dif;
 
@@ -76,17 +135,37 @@ namespace GrigoreDetection
 
         private void buttonParseImage1_Click(object sender, EventArgs e)
         {
-            ParseImage(1);
+            ParseImage(0);
         }
 
         private void buttonParseImage2_Click(object sender, EventArgs e)
         {
-            ParseImage(2);
+            ParseImage(1);
         }
 
         private void buttonParseImage3_Click(object sender, EventArgs e)
         {
-            ParseImage(3);
+            ParseImage(2);
+        }
+
+        private void buttonBrowseBaseImage_Click(object sender, EventArgs e)
+        {
+            BrowseImage(-1);
+        }
+
+        private void buttonBrowseImage1_Click(object sender, EventArgs e)
+        {
+            BrowseImage(0);
+        }
+
+        private void buttonBrowseImage2_Click(object sender, EventArgs e)
+        {
+            BrowseImage(1);
+        }
+
+        private void buttonBrowseImage3_Click(object sender, EventArgs e)
+        {
+            BrowseImage(2);
         }
 
     }
