@@ -118,22 +118,18 @@ namespace GrigoreDetectionConsole
 
                 int centerX = edgePoints[0].X;
                 int centerY = edgePoints[0].Y;
-                int minX = centerX;
-                int minY = centerY;
-                int maxX = centerX;
-                int maxY = centerY;
+
                 for (int j = 0; j < edgePoints.Count - 1; j++)
                 {
                     centerX += edgePoints[j + 1].X;
                     centerY += edgePoints[j + 1].Y;
 
-                    if (edgePoints[j + 1].X < minX) minX = edgePoints[j + 1].X;
-                    if (edgePoints[j + 1].Y < minY) minY = edgePoints[j + 1].Y;
-                    if (edgePoints[j + 1].X > maxX) maxX = edgePoints[j + 1].X;
-                    if (edgePoints[j + 1].Y > maxX) maxX = edgePoints[j + 1].Y;
-
                     g.DrawLine(usePen, edgePoints[j].X, edgePoints[j].Y, edgePoints[j + 1].X, edgePoints[j + 1].Y);
                 }
+
+                // add last point
+                centerX += edgePoints[edgePoints.Count - 1].X;
+                centerY += edgePoints[edgePoints.Count - 1].Y;
 
                 g.DrawLine(usePen
                     , edgePoints[0].X, edgePoints[0].Y
@@ -142,11 +138,10 @@ namespace GrigoreDetectionConsole
                 Console.WriteLine(string.Format("Original (x, y): {0}, {1}"
                     , new object[] { 
                         (centerX / edgePoints.Count), (centerY / edgePoints.Count)
-                        //, maxX - minX, maxY - minY
                     }));
                 Console.WriteLine(string.Format("Detected (x, y): {0}, {1}"
-                    , Grigore.Position.X - (centerX / edgePoints.Count)
-                    , Grigore.Position.Y - (centerY / edgePoints.Count)
+                    , (centerX / edgePoints.Count)
+                    , (centerY / edgePoints.Count)
                 ));
             }
 
