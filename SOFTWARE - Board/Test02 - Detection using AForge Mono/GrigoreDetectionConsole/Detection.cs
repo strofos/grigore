@@ -12,8 +12,9 @@ namespace GrigoreDetectionConsole
 {
     public class Detection
     {
+        private string dirPath;
         public Robot Grigore;
-        public System.Drawing.Image DifI;
+        public System.Drawing.Image internalImageContainer;
 
         public string OriginalBoardImage = "robo-board1.png";
         public IList<string> DifBoardImages = new List<string> { "robo-board1.1.png", "robo-board1.2.png", "robo-board1.3.png" };
@@ -22,7 +23,7 @@ namespace GrigoreDetectionConsole
         public Detection() { }
 
         public void Run() {
-            string dirPath = Environment.CurrentDirectory + "/Images/";
+            dirPath = Environment.CurrentDirectory + "/Images/";
             if (!Directory.Exists(dirPath))
                 dirPath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "/Images/";
 
@@ -68,7 +69,7 @@ namespace GrigoreDetectionConsole
                 if (imageId >= 0)
                     dif = (Bitmap)Bitmap.FromFile(difImagePath);
                 else
-                    dif = (Bitmap)DifI;
+                    dif = (Bitmap)internalImageContainer;
             }
             catch (Exception ex)
             {
@@ -153,7 +154,8 @@ namespace GrigoreDetectionConsole
             bluePen.Dispose();
             g.Dispose();
 
-            DifI = dif;
+            //DifI = dif;
+            dif.Save(dirPath + "processed-dif.jpg");
 
             Console.WriteLine(string.Format("{1}, {0} sec", (DateTime.Now - startTime), ""));
 
@@ -188,7 +190,9 @@ namespace GrigoreDetectionConsole
 
             g.Dispose();
 
-            DifI = orig;
+            internalImageContainer = orig;
+
+            orig.Save(dirPath + "processed-generated.jpg");
         }
     }
 }
