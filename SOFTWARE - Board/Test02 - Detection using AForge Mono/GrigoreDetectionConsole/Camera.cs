@@ -51,7 +51,7 @@ namespace GrigoreDetectionConsole
                 raspistillProcess.InitializeLifetimeService();
 
                 // add some thread sleep to allow the process to be created
-                System.Threading.Thread.Sleep(300);
+                System.Threading.Thread.Sleep(500);
             }
 
             
