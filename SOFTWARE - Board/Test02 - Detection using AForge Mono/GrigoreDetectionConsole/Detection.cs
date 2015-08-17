@@ -34,6 +34,7 @@ namespace GrigoreDetectionConsole
 
             GrigoreImage = dirPath + GrigoreImage;
             Grigore = new Robot(new Size(640, 400));
+
             //// set it to origin, unrotated
             //Grigore.Position = new System.Drawing.Point(0, 0);
             //Grigore.TurnLeft(-Grigore.Direction);
@@ -44,8 +45,6 @@ namespace GrigoreDetectionConsole
             GeneratedImage();
 
             ParseImage(-1);
-
-            Console.ReadKey();
         }
 
         private void ParseImage(int imageId)
@@ -108,11 +107,11 @@ namespace GrigoreDetectionConsole
                 List<IntPoint> points = new List<IntPoint>();
 
                 if (shapeChecker.IsQuadrilateral(edgePoints))
-                    Console.WriteLine(", quadrilateral");
+                    Console.Write(", quadrilateral");
                 else if (shapeChecker.IsConvexPolygon(edgePoints, out points))
-                    Console.WriteLine(", convex poligon");
+                    Console.Write(", convex poligon");
                 else if (shapeChecker.IsTriangle(edgePoints, out points))
-                    Console.WriteLine(", triangle");
+                    Console.Write(", triangle");
 
                 Pen usePen = shapeChecker.IsQuadrilateral(edgePoints) ? redPen : bluePen;
 
@@ -135,7 +134,7 @@ namespace GrigoreDetectionConsole
                     , edgePoints[0].X, edgePoints[0].Y
                     , edgePoints[edgePoints.Count - 1].X, edgePoints[edgePoints.Count - 1].Y);
 
-                Console.WriteLine(string.Format("Original (x, y): {0}, {1}"
+                Console.WriteLine(string.Format("\nOriginal (x, y): {0}, {1}"
                     , new object[] { 
                         (centerX / edgePoints.Count), (centerY / edgePoints.Count)
                     }));
@@ -152,13 +151,13 @@ namespace GrigoreDetectionConsole
             //DifI = dif;
             dif.Save(dirPath + "processed-dif.jpg");
 
-            Console.WriteLine(string.Format("{1}, {0} sec", (DateTime.Now - startTime), ""));
+            Console.WriteLine(string.Format("Duration: {0} sec", (DateTime.Now - startTime)));
 
         }
 
         private void GeneratedImage()
         {
-            Console.WriteLine(string.Format("Start genetaing {0}'", Grigore.Direction));
+            Console.WriteLine(string.Format("Start generating\nAngle: {0}'", Grigore.Direction));
             Console.WriteLine(string.Format("Position (x, y): {0}, {1}", Grigore.Position.X, Grigore.Position.Y));
 
             Bitmap orig;
